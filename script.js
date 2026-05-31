@@ -240,7 +240,7 @@ function renderAbout() {
   content.innerHTML = `
     <section class="about-page">
       <div class="about-photo">
-        <img src="images/about/about-01.jpg" alt="Kim Seokyoung" class="about-image">
+        <img src="images/about/about-01.JPG" alt="Kim Seokyoung" class="about-image">
       </div>
 
       <div class="about-content">
