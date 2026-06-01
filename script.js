@@ -434,6 +434,10 @@ lightboxEl.addEventListener("touchstart", (e) => {
   touchStartX = e.changedTouches[0].screenX;
 }, { passive: true });
 
+lightboxEl.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+}, { passive: false });
+
 lightboxEl.addEventListener("touchend", (e) => {
   touchEndX = e.changedTouches[0].screenX;
 
