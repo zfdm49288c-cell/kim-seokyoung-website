@@ -162,6 +162,8 @@ let lightboxOpen = false;
 let lightboxEl = null;
 let lightboxImg = null;
 let lightboxFigure = null;
+let touchStartX = 0;
+let touchEndX = 0;
 
 function renderGallery(key) {
   const config = galleryPages[key];
@@ -219,7 +221,7 @@ const hasKoreanText = Array.isArray(config.koreanDescriptionLines) && config.kor
           ${galleryItems.map((it, idx) => `
             <button class="japan-thumb" data-index="${idx}" aria-label="Open ${it.caption}">
               <span class="thumb-frame">
-                <img src="${it.src}" alt="${it.caption}" style="object-position: ${it.objectPosition};">
+                <img src="${it.thumbSrc || it.src}" alt="${it.caption}" loading="lazy" decoding="async" style="object-position: ${it.objectPosition};">
               </span>
             </button>
           `).join("")}
@@ -412,8 +414,39 @@ function ensureLightbox() {
   lightboxEl.querySelector(".lightbox-next").addEventListener("click", () => showImage(currentIndex + 1));
 
   lightboxEl.addEventListener("click", (e) => {
-    if (e.target === lightboxEl) closeLightbox();
-  });
+  if (e.target === lightboxEl) {
+    closeLightbox();
+  }
+});
+
+lightboxFigure.addEventListener("click", (e) => {
+  const rect = lightboxFigure.getBoundingClientRect();
+  const clickX = e.clientX - rect.left;
+
+  if (clickX < rect.width / 2) {
+    showImage(currentIndex - 1);
+  } else {
+    showImage(currentIndex + 1);
+  }
+});
+
+lightboxEl.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+lightboxEl.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+
+  const diff = touchEndX - touchStartX;
+
+  if (Math.abs(diff) < 40) return;
+
+  if (diff < 0) {
+    showImage(currentIndex + 1);
+  } else {
+    showImage(currentIndex - 1);
+  }
+}, { passive: true });
 }
 
 function openLightbox(index) {
@@ -477,4 +510,32 @@ window.addEventListener("hashchange", renderPage);
 window.addEventListener("DOMContentLoaded", () => {
   renderPage();
   updateActiveMenu();
+
+  const menuButton = document.querySelector(".mobile-menu-toggle");
+  const sidebar = document.querySelector(".sidebar");
+
+  if (menuButton && sidebar) {
+    menuButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      sidebar.classList.toggle("is-open");
+    });
+
+    sidebar.querySelectorAll(".sidebar-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        sidebar.classList.remove("is-open");
+      });
+    });
+  }
+});
+document.addEventListener("contextmenu", (e) => {
+  if (e.target.tagName === "IMG") {
+    e.preventDefault();
+  }
+});
+
+document.addEventListener("dragstart", (e) => {
+  if (e.target.tagName === "IMG") {
+    e.preventDefault();
+  }
 });

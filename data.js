@@ -36,6 +36,7 @@ window.galleryData.japan = Array.from({ length: 40 }, (_, i) => {
 
   return {
     src: `images/japan/japan-${num}.jpg`,
+    thumbSrc: `images/japan/thumbs/japan-${num}.jpg`,
     caption: `Japan ${num}`,
     objectPosition: position
   };
@@ -63,6 +64,7 @@ if (num === "51") {
 
 return {
   src: `images/osaka/osaka-${num}.jpg`,
+  thumbSrc: `images/osaka/thumbs/osaka-${num}.jpg`,
   caption: `Osaka ${num}`,
   comment: comments[num] || "",
   objectPosition: position  
@@ -75,6 +77,7 @@ window.galleryData.france = Array.from({ length: 40 }, (_, i) => {
 
   return {
     src: `images/france/france-${num}.jpg`,
+    thumbSrc: `images/france/thumbs/france-${num}.jpg`,
     caption: `France ${num}`,
     objectPosition: "center center"
   };
@@ -97,6 +100,7 @@ window.galleryData.vietnam = Array.from({ length: 40 }, (_, i) => {
 
 return {
   src: `images/vietnam/vietnam-${num}.jpg`,
+  thumbSrc: `images/vietnam/thumbs/vietnam-${num}.jpg`,
   caption: `Vietnam ${num}`,
   objectPosition: position
 };

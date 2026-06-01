@@ -26,20 +26,59 @@ body {
   font-family: "EB Garamond", serif;
   position: relative;
   min-height: 100vh;
-  background-image: url("images/background/background-02.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: #000;
   color: #f2f2f2;
 }
 
-body::before {
-  content: "";
+:root {
+  --pc-bg-size: 100% auto;
+  --pc-bg-x: center;
+  --pc-bg-y: 0px;
+}
+
+html {
+  background: #000;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  font-family: "EB Garamond", serif;
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  color: #f2f2f2;
+}
+
+.site-bg {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.32);
+  background-image: url("images/background/background-02.jpg");
+  background-size: var(--pc-bg-size);
+  background-position: var(--pc-bg-x) var(--pc-bg-y);
+  background-repeat: no-repeat;
+  background-color: #000;
+  z-index: 0;
   pointer-events: none;
-  z-index: -1;
+  transform: translateZ(0);
+}
+
+.site-dim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  z-index: 1;
+  pointer-events: none;
+  transition: all .25s ease;
+}
+
+body:not(.home-page) .site-dim {
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
 
 .sidebar {
@@ -47,7 +86,7 @@ body::before {
   left: 20px;
   top: 20px;
   width: 220px;
-  background: rgba(0, 0, 0, 0.45);
+  background: transparent;
   padding: 0;
   z-index: 20;
 }
@@ -140,15 +179,13 @@ body::before {
 }
 
 main {
+  position: relative;
+  z-index: 2;
   margin-left: 260px;
   padding: 32px;
   padding-bottom: 160px;
   max-width: 1100px;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 14px;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
 }
 
 body.home-page main {
@@ -172,11 +209,8 @@ body.home-page main {
 .gallery-featured-image {
   width: 100%;
   height: auto;
-  max-height: 100vh;
-  object-fit: contain;
   display: block;
 }
-
 .gallery-empty {
   color: rgba(255, 255, 255, 0.65);
 }
@@ -488,28 +522,7 @@ body.home-page main {
   .about-columns {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 600px) {
-  .sidebar {
-    position: static;
-    width: auto;
-    padding: 20px;
-  }
-
-  main {
-    margin-left: 0;
-    padding: 20px;
-    padding-bottom: 140px;
-  }
-
-  .japan-thumb-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .global-footer {
-    padding: 60px 20px 20px;
-  }
 }
 /* Book & Zines */
 
@@ -595,11 +608,259 @@ body.home-page main {
 }
 .coming-soon-page {
   min-height: 55vh;
-  display: flex;
+  display: flex; 
   align-items: center;
   justify-content: center;
   font-family: "EB Garamond", serif;
   font-size: 22px;
   letter-spacing: 0.25em;
   color: rgba(255,255,255,0.55);
+}
+
+/* Mobile only */
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .site-bg,
+  .site-dim {
+    display: none !important;
+  }
+
+  :root {
+    --mobile-bg-size: 900px;
+    --mobile-bg-x: 0%;
+    --mobile-bg-y: 0px;
+  }
+
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    background: #000 !important;
+  }
+
+  body {
+    background-image: none !important;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("images/background/background-02.jpg");
+    background-size: var(--mobile-bg-size) auto;
+    background-position: var(--mobile-bg-x) var(--mobile-bg-y);
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.28);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .sidebar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    max-width: calc(100vw - 64px) !important;
+    margin: 42px 32px 0 32px !important;
+    padding: 0 !important;
+    z-index: 99999 !important;
+    background: transparent !important;
+  }
+
+  .sidebar h1 {
+    margin: 0 !important;
+  }
+
+  .sidebar h1 a {
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    font-weight: 400 !important;
+    color: #f2f2f2 !important;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-block !important;
+    position: relative !important;
+    z-index: 100000 !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #f2f2f2 !important;
+    font-family: "EB Garamond", serif !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    text-decoration: underline !important;
+    cursor: pointer;
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .sidebar-menu {
+    display: none;
+    position: relative !important;
+    z-index: 100000 !important;
+    width: 260px !important;
+    max-width: calc(100vw - 40px) !important;
+    margin-top: 12px;
+    padding: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    pointer-events: auto !important;
+  }
+
+  .sidebar.is-open .sidebar-menu {
+    display: block;
+  }
+
+  .sidebar .label {
+    display: block !important;
+    width: 140px !important;
+    max-width: 320px !important;
+    margin: 26px 0 8px 0 !important;
+    padding: 0 0 4px 0 !important;
+    background: transparent !important;
+    color: #f2f2f2 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.45) !important;
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+    font-weight: 400 !important;
+  }
+
+  .sidebar a,
+  .sidebar a:not(.sidebar-instagram),
+  .sidebar a.active {
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+    margin: 4px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    font-weight: 400 !important;
+  }
+
+  .sidebar a.active {
+    color: #d9c664 !important;
+  }
+
+  .sidebar-instagram {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    margin: 8px 0 18px 0 !important;
+  }
+
+  main {
+    position: relative !important;
+    z-index: 2 !important;
+    margin-left: 0 !important;
+    padding: 70px 24px 80px !important;
+    max-width: none !important;
+    width: auto !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .sidebar.is-open + main {
+    margin-top: 36px !important;
+  }
+
+  body:not(.home-page) main {
+    margin-top: 32px !important;
+    background: rgba(0,0,0,0.42) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+    border-radius: 16px !important;
+  }
+
+  .fragment-page .gallery-korean-title,
+  .fragment-page .gallery-english-title {
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+    margin: 22px 0 14px 0 !important;
+  }
+
+  .fragment-page .gallery-korean-intro {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  .fragment-page .gallery-english-intro {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .fragment-page .gallery-intro p {
+    margin: 0 0 10px 0 !important;
+  }
+
+  .lightbox {
+    background: rgba(0,0,0,0.92) !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+  .lightbox-figure {
+    width: 120vw !important;
+    height: 100vw !important;
+    max-height: none !important;
+    padding: 15px !important;
+    background: #f4f1eb !important;
+}
+
+  .lightbox-img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .lightbox-button {
+    display: none !important;
+}
+
+  .lightbox-prev {
+    left: 2px !important;
+  }
+
+  .lightbox-next {
+    right: 2px !important;
+  }
+
+  .lightbox-close {
+    right: 10px !important;
+    top: 10px !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 26px !important;
+  }
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
 }
