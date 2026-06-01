@@ -868,13 +868,37 @@ body.home-page main {
     pointer-events: none !important;
   }
 }
+html.lightbox-locked,
+body.lightbox-locked {
+  overflow: hidden !important;
+  height: 100% !important;
+  overscroll-behavior: none !important;
+  touch-action: none !important;
+}
+
 body.lightbox-locked {
   position: fixed !important;
   left: 0 !important;
   right: 0 !important;
   width: 100% !important;
-  overflow: hidden !important;
+}
+
+html.lightbox-locked .sidebar,
+html.lightbox-locked .sidebar-menu,
+html.lightbox-locked .mobile-menu-toggle,
+html.lightbox-locked main {
+  pointer-events: none !important;
+}
+
+html.lightbox-locked .lightbox,
+html.lightbox-locked .lightbox * {
+  pointer-events: auto !important;
+}
+
+html.lightbox-locked .lightbox {
+  z-index: 999999 !important;
   touch-action: none !important;
+  overscroll-behavior: none !important;
 }
 body.lightbox-locked .lightbox {
   z-index: 999999 !important;

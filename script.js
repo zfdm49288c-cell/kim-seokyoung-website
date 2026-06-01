@@ -462,7 +462,10 @@ function openLightbox(index) {
   currentIndex = index;
   lightboxEl.classList.add("is-open");
   lockedScrollY = window.scrollY || window.pageYOffset;
+  lockedScrollY = window.scrollY || window.pageYOffset;
+  document.documentElement.classList.add("lightbox-locked");
   document.body.classList.add("lightbox-locked");
+  document.body.style.top = `-${lockedScrollY}px`;
   document.body.style.top = `-${lockedScrollY}px`;
   showImage(index, true);
 }
@@ -471,7 +474,10 @@ function closeLightbox() {
   if (!lightboxEl) return;
   lightboxOpen = false;
   lightboxEl.classList.remove("is-open");
+  document.documentElement.classList.remove("lightbox-locked");
   document.body.classList.remove("lightbox-locked");
+  document.body.style.top = "";
+  window.scrollTo(0, lockedScrollY);
   document.body.style.top = "";
   window.scrollTo(0, lockedScrollY);
 }
