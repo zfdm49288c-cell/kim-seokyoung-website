@@ -534,19 +534,28 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-document.addEventListener("contextmenu", (e) => {
-  if (e.target.tagName === "IMG") {
-    e.preventDefault();
-  }
+["contextmenu", "dragstart"].forEach((eventName) => {
+  document.addEventListener(eventName, (e) => {
+    const target = e.target;
+
+    if (
+      target.closest &&
+      target.closest("img, .lightbox-figure, .thumb-frame, .gallery-featured, .about-photo")
+    ) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
 });
 
-document.addEventListener("dragstart", (e) => {
-  if (e.target.tagName === "IMG") {
-    e.preventDefault();
-  }
-});
 document.addEventListener("touchstart", (e) => {
-  if (e.target.tagName === "IMG") {
+  const target = e.target;
+
+  if (
+    target.closest &&
+    target.closest("img, .lightbox-figure, .thumb-frame, .gallery-featured, .about-photo")
+  ) {
     e.preventDefault();
   }
-}, { passive: false });
+}, { passive: false, capture: true });
