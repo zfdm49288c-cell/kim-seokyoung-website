@@ -164,6 +164,7 @@ let lightboxImg = null;
 let lightboxFigure = null;
 let touchStartX = 0;
 let touchEndX = 0;
+let lockedScrollY = 0;
 
 function renderGallery(key) {
   const config = galleryPages[key];
@@ -460,7 +461,9 @@ function openLightbox(index) {
   lightboxOpen = true;
   currentIndex = index;
   lightboxEl.classList.add("is-open");
+  lockedScrollY = window.scrollY || window.pageYOffset;
   document.body.classList.add("lightbox-locked");
+  document.body.style.top = `-${lockedScrollY}px`;
   showImage(index, true);
 }
 
@@ -469,6 +472,8 @@ function closeLightbox() {
   lightboxOpen = false;
   lightboxEl.classList.remove("is-open");
   document.body.classList.remove("lightbox-locked");
+  document.body.style.top = "";
+  window.scrollTo(0, lockedScrollY);
 }
 
 function showImage(index, immediate = false) {
