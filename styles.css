@@ -880,3 +880,18 @@ body.lightbox-locked .lightbox {
   touch-action: pan-x !important;
   overscroll-behavior: contain !important;
 }
+img {
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+.lightbox-img,
+.gallery-featured-image,
+.thumb-frame img,
+.about-image,
+.project-cover-image {
+  pointer-events: none !important;
+  -webkit-touch-callout: none !important;
+}
