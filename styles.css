@@ -871,3 +871,12 @@ img {
     pointer-events: none !important;
   }
 }
+body.lightbox-locked {
+  overflow: hidden !important;
+  touch-action: none !important;
+}
+
+body.lightbox-locked .lightbox {
+  touch-action: pan-x !important;
+  overscroll-behavior: contain !important;
+}

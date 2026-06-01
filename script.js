@@ -456,6 +456,7 @@ function openLightbox(index) {
   lightboxOpen = true;
   currentIndex = index;
   lightboxEl.classList.add("is-open");
+  document.body.classList.add("lightbox-locked");
   showImage(index, true);
 }
 
@@ -463,6 +464,7 @@ function closeLightbox() {
   if (!lightboxEl) return;
   lightboxOpen = false;
   lightboxEl.classList.remove("is-open");
+  document.body.classList.remove("lightbox-locked");
 }
 
 function showImage(index, immediate = false) {
