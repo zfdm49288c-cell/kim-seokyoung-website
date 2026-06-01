@@ -230,6 +230,10 @@ body.home-page main {
 .fragment-page .gallery-korean-title {
   text-transform: none;
   letter-spacing: 0.08em;
+  width: 740px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fragment-page .gallery-english-title {
@@ -240,6 +244,10 @@ body.home-page main {
   font-size: 19px;
   margin-top: 30px;
   margin-bottom: 15px;
+  width: 740px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fragment-page:not(.has-korean) .gallery-english-title {
@@ -256,7 +264,7 @@ body.home-page main {
 
 .fragment-page .gallery-english-intro {
   font-size: 16px;
-  line-height: 0.6;
+  line-height: 1.2;
   letter-spacing: 0.02em;
   font-family: "EB Garamond", serif;
   margin-bottom: 50px;
@@ -265,7 +273,7 @@ body.home-page main {
 
 .fragment-page .gallery-korean-intro {
   font-size: 14px;
-  line-height: 0.8;
+  line-height: 1.3;
   letter-spacing: 0.01em;
   font-family: "Pretendard", sans-serif;
 }
@@ -285,7 +293,7 @@ body.home-page main {
 
 /* Spacing helpers */
 .gallery-space {
-  height: 20px;
+  height: 5px;
   margin: 0 !important;
 }
 
@@ -390,13 +398,13 @@ body.home-page main {
 }
 .about-english {
   font-size: 16px;
-  line-height: 1.1;
+  line-height: 1.2;
   font-family: "EB Garamond", Times, serif;
 }
 
 .about-korean {
   font-size: 14px;
-  line-height: 1.3;
+  line-height: 0.7;
   font-family: "Pretendard", sans-serif;
 }
 
@@ -624,9 +632,18 @@ body.home-page main {
 }
 
 @media (max-width: 600px) {
+
   .site-bg,
   .site-dim {
     display: none !important;
+  }
+
+  .about-english {
+    line-height: 1.35 !important;
+  }
+
+  .about-korean {
+    line-height: 1.55 !important;
   }
 
   :root {
@@ -801,7 +818,7 @@ body.home-page main {
 
   .fragment-page .gallery-korean-intro {
     font-size: 14px !important;
-    line-height: 1.55 !important;
+    line-height: 1.8 !important;
     letter-spacing: -0.01em !important;
   }
 
@@ -983,4 +1000,33 @@ img {
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   user-select: none !important;
+}
+@media (min-width: 601px) {
+
+  .fragment-page .gallery-intro {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fragment-page .gallery-korean-intro,
+  .fragment-page .gallery-english-intro {
+    width: 740px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 601px) {
+  .fragment-page {
+    --text-box-width: 780px;
+  }
+
+  .fragment-page .gallery-korean-title,
+  .fragment-page .gallery-korean-intro,
+  .fragment-page .gallery-english-title,
+  .fragment-page .gallery-english-intro {
+    width: var(--text-box-width);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
