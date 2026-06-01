@@ -518,6 +518,9 @@ window.addEventListener("DOMContentLoaded", () => {
   updateActiveMenu();
 
   const menuButton = document.querySelector(".mobile-menu-toggle");
+  if (menuButton && window.matchMedia("(min-width: 601px)").matches) {
+  menuButton.remove();
+}
   const sidebar = document.querySelector(".sidebar");
 
   if (menuButton && sidebar) {

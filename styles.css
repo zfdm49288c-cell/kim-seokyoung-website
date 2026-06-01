@@ -858,11 +858,7 @@ body.home-page main {
     height: 34px !important;
     font-size: 26px !important;
   }
-}
 
-img {
-  -webkit-user-drag: none;
-  user-select: none;
 }
 @media (min-width: 601px) {
   .mobile-menu-toggle {
@@ -894,4 +890,51 @@ img {
 .project-cover-image {
   pointer-events: none !important;
   -webkit-touch-callout: none !important;
+}
+@media (min-width: 601px) {
+  .mobile-menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+  }
+}img {
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+}
+
+.japan-thumb,
+.gallery-featured,
+.about-photo,
+.project-cover,
+.lightbox-figure {
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+}
+@media (min-width: 601px) {
+  .mobile-menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    position: absolute !important;
+  }
+}
+
+img {
+  pointer-events: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
 }
