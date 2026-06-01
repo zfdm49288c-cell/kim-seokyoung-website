@@ -183,7 +183,7 @@ function renderGallery(key) {
   const featuredCaption = config.featuredCaption || galleryItems[0]?.caption || `${config.englishTitle || config.title} 01`;
 
   const featuredMarkup = featuredSrc
-    ? `<div class="gallery-featured"><img src="${featuredSrc}" alt="${featuredCaption}" class="gallery-featured-image"></div>`
+    ? `<div class="gallery-featured"><div class="gallery-featured-image" style="background-image: url('${featuredSrc}');" aria-label="${featuredCaption}"></div>`
     : `<div class="gallery-featured gallery-coming-soon"><span>COMING SOON</span></div>`;
 
   activeItems = galleryItems;
@@ -399,7 +399,7 @@ function ensureLightbox() {
     <button class="lightbox-close" aria-label="Close">×</button>
     <button class="lightbox-button lightbox-prev" aria-label="Previous">‹</button>
     <figure class="lightbox-figure">
-      <img class="lightbox-img" alt="">
+      <div class="lightbox-img" aria-label=""></div>
     </figure>
     <button class="lightbox-button lightbox-next" aria-label="Next">›</button>
   `;
@@ -481,8 +481,8 @@ function showImage(index, immediate = false) {
   const item = activeItems[currentIndex];
 
   const update = () => {
-    lightboxImg.src = item.src;
-    lightboxImg.alt = item.caption || "";
+    lightboxImg.style.backgroundImage = `url('${item.src}')`;
+    lightboxImg.setAttribute("aria-label", item.caption || "");
     requestAnimationFrame(() => lightboxFigure.classList.remove("is-fading"));
   };
 
