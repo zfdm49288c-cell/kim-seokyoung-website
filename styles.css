@@ -93,7 +93,7 @@ body:not(.home-page) .site-dim {
 
 .sidebar h1 {
   font-size: 13px;
-  margin-bottom: 0px;
+  margin-bottom: 24px;
   font-weight: normal;
   color: #f2f2f2;
 }
@@ -208,10 +208,8 @@ body.home-page main {
 
 .gallery-featured-image {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: auto;
+  display: block;
 }
 .gallery-empty {
   color: rgba(255, 255, 255, 0.65);
@@ -230,10 +228,6 @@ body.home-page main {
 .fragment-page .gallery-korean-title {
   text-transform: none;
   letter-spacing: 0.08em;
-  width: 740px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .fragment-page .gallery-english-title {
@@ -244,10 +238,6 @@ body.home-page main {
   font-size: 19px;
   margin-top: 30px;
   margin-bottom: 15px;
-  width: 740px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .fragment-page:not(.has-korean) .gallery-english-title {
@@ -264,7 +254,7 @@ body.home-page main {
 
 .fragment-page .gallery-english-intro {
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 0.6;
   letter-spacing: 0.02em;
   font-family: "EB Garamond", serif;
   margin-bottom: 50px;
@@ -273,7 +263,7 @@ body.home-page main {
 
 .fragment-page .gallery-korean-intro {
   font-size: 14px;
-  line-height: 1.3;
+  line-height: 0.8;
   letter-spacing: 0.01em;
   font-family: "Pretendard", sans-serif;
 }
@@ -293,7 +283,7 @@ body.home-page main {
 
 /* Spacing helpers */
 .gallery-space {
-  height: 5px;
+  height: 20px;
   margin: 0 !important;
 }
 
@@ -398,13 +388,13 @@ body.home-page main {
 }
 .about-english {
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.1;
   font-family: "EB Garamond", Times, serif;
 }
 
 .about-korean {
   font-size: 14px;
-  line-height: 0.7;
+  line-height: 1.3;
   font-family: "Pretendard", sans-serif;
 }
 
@@ -473,11 +463,12 @@ body.home-page main {
 }
 
 .lightbox-img {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: calc(100% - 34px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .lightbox-button {
@@ -632,18 +623,9 @@ body.home-page main {
 }
 
 @media (max-width: 600px) {
-
   .site-bg,
   .site-dim {
     display: none !important;
-  }
-
-  .about-english {
-    line-height: 1.35 !important;
-  }
-
-  .about-korean {
-    line-height: 1.55 !important;
   }
 
   :root {
@@ -807,7 +789,6 @@ body.home-page main {
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(3px) !important;
     border-radius: 16px !important;
-    -webkit-overflow-scrolling: touch !important; 
   }
 
   .fragment-page .gallery-korean-title,
@@ -819,7 +800,7 @@ body.home-page main {
 
   .fragment-page .gallery-korean-intro {
     font-size: 14px !important;
-    line-height: 1.8 !important;
+    line-height: 1.55 !important;
     letter-spacing: -0.01em !important;
   }
 
@@ -834,17 +815,12 @@ body.home-page main {
   }
 
   .lightbox {
-  pointer-events: none !important;
-}
-
-.lightbox.is-open {
-  pointer-events: auto !important;
-  background: rgba(0,0,0,0.92) !important;
-  padding: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  align-items: center !important;
-  justify-content: center !important;
+    background: rgba(0,0,0,0.92) !important;
+    padding: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
   .lightbox-figure {
@@ -856,12 +832,12 @@ body.home-page main {
 }
 
   .lightbox-img {
-   width: 100% !important;
-   height: 100% !important;
-   background-size: contain !important;
-   background-position: center !important;
-   background-repeat: no-repeat !important;
-}
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
 
   .lightbox-button {
     display: none !important;
@@ -882,48 +858,25 @@ body.home-page main {
     height: 34px !important;
     font-size: 26px !important;
   }
+}
 
+img {
+  -webkit-user-drag: none;
+  user-select: none;
 }
 @media (min-width: 601px) {
   .mobile-menu-toggle {
     display: none !important;
     visibility: hidden !important;
+    pointer-events: none !important;
   }
 }
-@media (min-width: 601px) {
-  .fragment-page {
-    --text-box-width: 780px;
-  }
-
-  .fragment-page .gallery-korean-title,
-  .fragment-page .gallery-korean-intro,
-  .fragment-page .gallery-english-title,
-  .fragment-page .gallery-english-intro {
-    width: var(--text-box-width);
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+body.lightbox-locked {
+  overflow: hidden !important;
+  touch-action: none !important;
 }
 
-@media (max-width: 600px) {
-  html,
-  body,
-  html.lightbox-locked,
-  body.lightbox-locked {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    height: auto !important;
-    min-height: 100% !important;
-    position: relative !important;
-    top: auto !important;
-  }
-
-  main {
-    overflow: visible !important;
-    height: auto !important;
-  }
-
-  .lightbox.is-open {
-  }
+body.lightbox-locked .lightbox {
+  touch-action: pan-x !important;
+  overscroll-behavior: contain !important;
 }
