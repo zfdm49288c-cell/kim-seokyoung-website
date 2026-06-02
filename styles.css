@@ -804,6 +804,8 @@ body.home-page main {
   body:not(.home-page) main {
     margin-top: 32px !important;
     background: rgba(0,0,0,0.42) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
     border-radius: 16px !important;
   }
 
@@ -917,5 +919,16 @@ body.home-page main {
   }
 
   .lightbox.is-open {
+  }
+}
+@media (max-width: 600px) {
+  main {
+    pointer-events: none !important;
+  }
+
+  main a,
+  main button,
+  main .japan-thumb {
+    pointer-events: auto !important;
   }
 }
