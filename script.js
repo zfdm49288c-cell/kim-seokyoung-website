@@ -376,6 +376,10 @@ function renderDefault(key) {
 }
 
 function renderPage() {
+  document.documentElement.classList.remove("lightbox-locked");
+  document.body.classList.remove("lightbox-locked");
+  document.body.style.top = "";
+  lightboxOpen = false;
   const key = location.hash.replace("#", "") || "home";
   setHomeMode(key === "home");
   updateActiveMenu();
