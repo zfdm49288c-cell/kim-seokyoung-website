@@ -471,6 +471,23 @@ function closeLightbox() {
 }
 
 function showImage(index, immediate = false) {
+  function preloadImage(src) {
+  if (!src) return;
+  const img = new Image();
+  img.src = src;
+}
+
+function preloadAround(index) {
+  if (!activeItems.length) return;
+
+  const prevIndex = index <= 0 ? activeItems.length - 1 : index - 1;
+  const nextIndex = index >= activeItems.length - 1 ? 0 : index + 1;
+
+  preloadImage(activeItems[prevIndex]?.src);
+  preloadImage(activeItems[nextIndex]?.src);
+}
+
+function showImage(index, immediate = false) {
   if (!activeItems.length || !lightboxImg || !lightboxFigure) return;
 
   if (index < 0) index = activeItems.length - 1;
@@ -479,20 +496,22 @@ function showImage(index, immediate = false) {
   currentIndex = index;
   const item = activeItems[currentIndex];
 
-  const update = () => {
-    lightboxImg.src = item.src;
-    lightboxImg.alt = item.caption || "";
-    requestAnimationFrame(() => lightboxFigure.classList.remove("is-fading"));
+  lightboxFigure.classList.add("is-fading");
+
+  lightboxImg.onload = () => {
+    requestAnimationFrame(() => {
+      lightboxFigure.classList.remove("is-fading");
+    });
+    preloadAround(currentIndex);
   };
+
+  lightboxImg.src = item.src;
+  lightboxImg.alt = item.caption || "";
 
   if (immediate) {
     lightboxFigure.classList.remove("is-fading");
-    update();
-    return;
+    preloadAround(currentIndex);
   }
-
-  lightboxFigure.classList.add("is-fading");
-  window.setTimeout(update, 180);
 }
 
 window.addEventListener("keydown", (e) => {
