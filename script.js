@@ -380,6 +380,11 @@ function renderPage() {
   document.body.classList.remove("lightbox-locked");
   document.body.style.top = "";
   lightboxOpen = false;
+
+  if (lightboxEl) {
+  lightboxEl.classList.remove("is-open");
+}
+
   const key = location.hash.replace("#", "") || "home";
   setHomeMode(key === "home");
   updateActiveMenu();
@@ -451,6 +456,7 @@ lightboxEl.addEventListener("touchstart", (e) => {
 }, { passive: true });
 
 lightboxEl.addEventListener("touchmove", (e) => {
+  if (!lightboxOpen) return;
   e.preventDefault();
 }, { passive: false });
 
