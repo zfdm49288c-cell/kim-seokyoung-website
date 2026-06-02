@@ -267,7 +267,7 @@ function renderAbout() {
         <div style="height:10px;"></div>
 <p class="about-english">I am a photographer based in Korea, working primarily in black and white.</p>
 <p class="about-english">I use photography as a way of documenting myself through the people, objects, patterns, and passing moments that draw my attention.</p>
-<p class="about-english">My photographs are not intended to deliver a message or comment on social issues.These photographs are simply fragments of the world I have encountered. Their interpretation and meaning are left to the viewer.</p>
+<p class="about-english">My photographs are not intended to deliver a message or comment on social issues. These photographs are simply fragments of the world I have encountered. Their interpretation and meaning are left to the viewer.</p>
 
         <div class="about-columns">
 
@@ -573,14 +573,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }, true);
 });
-
-document.addEventListener("touchstart", (e) => {
-  const target = e.target;
-
-  if (
-    target.closest &&
-    target.closest("img, .lightbox-figure, .thumb-frame, .gallery-featured, .about-photo")
-  ) {
-    e.preventDefault();
-  }
-}, { passive: false, capture: true });
