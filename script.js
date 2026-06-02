@@ -33,10 +33,19 @@ const galleryPages = {
     englishTitle: "One month in Osaka(2024)",
     koreanTitle: "오사카에서의 한 달",
     koreanDescriptionLines: [
-      "한글 본문"
+      "24. 11. 11 ~ 12. 12 ‘임페리얼 대국’이라는 화려하고 강렬한 이름을 가진 빌딩 902호에서의 시간들.",
+      "그때의 나는 왜 그랬나 싶을 정도로 누구에게 쫓기는듯 계속 사진만 찍어댔다. 어찌 보면 여행이기도 할텐데 늦잠도 낮잠도 나에겐 허락되지 않은  사치였다. 백수주제에 많은 돈을 들여서 온 곳이니 그 돈에 걸맞는 결과물을 마음속으로 계속해서 갈구하고 있었나보다.",
+      "이 기간이 기억에서 흐릿해지는걸 원치 않았는지 생전 처음으로 한 달 동안의 일기를 썼고 40롤의 필름을 어떤 렌즈로 어디서 어떤 기간에 찍었고 이 필름이 몇번째 필름인지 번호까지 붙여가며 정성스럽게 관리했다. 지금도 그 일기를 종종 본다. 생각보다 자세히 적어서 한 두 줄만 읽어도 순식간에 그 시간으로 되돌아 간 것 같았다.",
+      "이 때의 사진은 누군가에게는 단지 스트릿 사진이겠지만 나에겐 꽤 특별한 사진들이다. ‘최고의 작가’를 만났고 ‘내 사진에 대한 정체성 확립’과 ‘스스로에게 던졌던 질문에 대한 확신의 답’으로 채워갔던 내 작업의 변곡점 같은 사진이랄까. 덕분에 지금 이 홈페이지를 만들 수도 있었다.",
     ],
     englishDescriptionLines: [
-      "English description"
+      "24. 11. 11 ~ 12. 12 Time in Room 902 of the ‘Imperial Taikoku’ Building.",
+      "Looking back, I have no idea why I was in such a rush. All I did that month was take photographs, as if something was always pushing me forward.",
+      "It was supposed to be a trip, but even sleeping in or taking a nap felt like luxuries I couldn't afford. I had spent a lot of money to be there, and I felt I had to make photographs that felt worth the trip.",
+      "I wanted to hold on to those memories for a little longer, so for the first time in my life, I kept a diary for an entire month. During that month, I shot forty rolls of film and carefully logged each one — where it was shot, which lens I used, when I shot it, and even gave every roll a number.",
+      "I still read those diaries sometimes. They're surprisingly detailed. Sometimes a few lines are enough to take me straight back to those days.",
+      "To some people, they're just street photographs. To me, they're much more than that. That trip was a turning point in my work. I met the photographer who influenced me the most, began to understand what I wanted from photography, and finally found answers to many of the questions I had been asking myself. In a way, these photographs made this website possible.",
+      
     ],
     featuredImage: "images/osaka/osaka-08.jpg",
     featuredCaption: "Osaka 8"
@@ -241,16 +250,16 @@ function renderAbout() {
 
       <div class="about-content">
         <h2>ABOUT</h2>
-<p class="about-english">I am a photographer based in Korea, working primarily in black and white.</p>
-<p class="about-english">I use photography as a way of documenting myself through the people, objects, patterns, and passing moments that draw my attention.</p>
-<p class="about-english">My photographs are not intended to deliver a message or comment on social issues.These photographs are simply fragments of the world I have encountered. Their interpretation and meaning are left to the viewer.</p>
-       
-        <div style="height:30px;"></div>
-
 <p class="about-korean">저는 한국을 기반으로 활동하는 사진가이며, 주로 흑백사진 작업을 합니다.</p>
 <p class="about-korean">사람과 사물, 패턴, 그리고 우연한 순간들을 기록하며 세상을 통해 저 자신을 담아냅니다.</p>
 <p class="about-korean">제 사진은 특정한 메시지를 전달하거나 사회적 이슈를 이야기하지 않습니다.</p>
 <p class="about-korean">단지 제가 마주한 세상의 조각들을 제시할 뿐이며, 해석과 의미는 사진을 보는 이에게 남겨둡니다.</p>
+       
+        <div style="height:20px;"></div>
+<p class="about-english">I am a photographer based in Korea, working primarily in black and white.</p>
+<p class="about-english">I use photography as a way of documenting myself through the people, objects, patterns, and passing moments that draw my attention.</p>
+<p class="about-english">My photographs are not intended to deliver a message or comment on social issues.These photographs are simply fragments of the world I have encountered. Their interpretation and meaning are left to the viewer.</p>
+
         <div class="about-columns">
 
        <div>
