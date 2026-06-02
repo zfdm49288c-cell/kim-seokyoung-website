@@ -563,19 +563,3 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-  ["contextmenu", "dragstart"].forEach((eventName) => {
-    document.addEventListener(eventName, (e) => {
-      const target = e.target;
-
-      if (
-        target.closest &&
-        target.closest("img, .lightbox-figure, .thumb-frame, .gallery-featured, .about-photo")
-      ) {
-        e.preventDefault();
-        e.stopPropagation();
-        return false;
-      }
-    }, true);
-  });
-}

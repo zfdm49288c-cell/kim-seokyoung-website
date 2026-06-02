@@ -884,33 +884,6 @@ body.home-page main {
     visibility: hidden !important;
   }
 }
-
-/*
-.lightbox-img,
-.gallery-featured-image,
-.thumb-frame img,
-.about-image,
-.project-cover-image {
-  -webkit-touch-callout: none !important;
-}
-  
-.japan-thumb,
-.gallery-featured,
-.about-photo,
-.project-cover,
-.lightbox-figure {
-  -webkit-touch-callout: none !important;
-  user-select: none !important;
-}
-*/
-
-}
-img {
-  -webkit-user-drag: none !important;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  user-select: none !important;
-}
 @media (min-width: 601px) {
   .fragment-page {
     --text-box-width: 780px;
