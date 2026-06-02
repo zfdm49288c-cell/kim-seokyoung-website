@@ -469,9 +469,7 @@ function closeLightbox() {
   lightboxEl.classList.remove("is-open");
   document.body.classList.remove("lightbox-locked");
 }
-
-function showImage(index, immediate = false) {
-  function preloadImage(src) {
+function preloadImage(src) {
   if (!src) return;
   const img = new Image();
   img.src = src;
