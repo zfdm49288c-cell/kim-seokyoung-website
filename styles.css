@@ -881,10 +881,11 @@ body.home-page main {
 @media (min-width: 601px) {
   .mobile-menu-toggle {
     display: none !important;
-    visibility: hidden !important;\
+    visibility: hidden !important;
   }
 }
 
+/*
 .lightbox-img,
 .gallery-featured-image,
 .thumb-frame img,
@@ -892,7 +893,7 @@ body.home-page main {
 .project-cover-image {
   -webkit-touch-callout: none !important;
 }
-
+  
 .japan-thumb,
 .gallery-featured,
 .about-photo,
@@ -901,7 +902,9 @@ body.home-page main {
   -webkit-touch-callout: none !important;
   user-select: none !important;
 }
+*/
 
+}
 img {
   -webkit-user-drag: none !important;
   -webkit-touch-callout: none !important;
