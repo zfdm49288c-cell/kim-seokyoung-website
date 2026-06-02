@@ -195,8 +195,8 @@ function renderGallery(key) {
   const featuredCaption = config.featuredCaption || galleryItems[0]?.caption || `${config.englishTitle || config.title} 01`;
 
   const featuredMarkup = featuredSrc
-    ? `<div class="gallery-featured"><div class="gallery-featured-image" style="background-image: url('${featuredSrc}');" aria-label="${featuredCaption}"></div>`
-    : `<div class="gallery-featured gallery-coming-soon"><span>COMING SOON</span></div>`;
+      ? `<div class="gallery-featured"><div class="gallery-featured-image" style="background-image: url('${featuredSrc}');" aria-label="${featuredCaption}"></div></div>`
+      : `<div class="gallery-featured gallery-coming-soon"><span>COMING SOON</span></div>`;
 
   activeItems = galleryItems;
   const isVietnam = key === "vietnam";
