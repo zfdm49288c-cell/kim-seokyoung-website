@@ -450,7 +450,7 @@ lightboxFigure.addEventListener("click", (e) => {
     showImage(currentIndex + 1);
   }
 });
-
+/*
 lightboxEl.addEventListener("touchstart", (e) => {
   touchStartX = e.changedTouches[0].screenX;
 }, { passive: true });
@@ -474,6 +474,7 @@ lightboxEl.addEventListener("touchend", (e) => {
   }
 }, { passive: true });
 }
+*/
 
 function openLightbox(index) {
   if (!activeItems.length) return;
