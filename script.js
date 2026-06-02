@@ -7,9 +7,23 @@ const galleryPages = {
     koreanTitle: "최근 작업물",
     koreanDescriptionLines: [
       "26.05.02~05.07 도쿄시, 후추시.",
+      "올해의 일본은 카메라 한 대와 20롤의 필름과 함께한 6일간의 여정이었다.",
+      "아무래도 혼자 사진 작업을 위해 해외로 나간다는 것은 늘 설레는 일이지만, 이상하게도 올해는 그 기분이 많이 들지 않았다. 지금 한국에서의 스트릿 작업에도 꽤 만족하고 있기 때문이지 않을까 정도로 생각해본다.",
+      "작년 8월, 까만 옷이 하얗게 변할 정도의 무더위 속에서 발견한 나카노의 새로운 매력을 잊지 못한다. 한여름의 열기를 뚫고 빛나던 시키노모리 공원의 여름 이벤트는 볼 수 없겠지만, 봄의 모습은 어떨까 하는 기대가 있었다. 하지만 오랜만의 여행에 고독한 소심쟁이가 되어버린 탓에, 그 시간을 제대로 만끽하지 못한 것이 아쉽다.",
+      "3년 전 같은 시기에 방문했던 후추시의 ‘쿠라야미 마츠리’는 이번 여행의 가장 큰 목적이었다.",
+      "마지막 이틀간 이어진 화려한 축제 속에서 나는 물 만난 물고기처럼 신사 주변을 이리저리 누비며 인상적인 장면들을 포착해갔다. PRESS인 척하며 행사 메인 로드에 침입도 해보고, 배가 고파 들른 야끼소바 야타이에서는 반가운 얼굴을 우연히 마주하기도 했다.",
+      "짧았지만 좋았다.",
+
     ],
     englishDescriptionLines: [
       "26.05.02~05.07 Tokyo, Fuchu.",
+      "This year's trip to Japan was a six-day journey with just one film camera and twenty rolls of film.",
+      "Traveling abroad alone for photography is usually exciting. This time, though, it felt different. Maybe it's because I've been quite satisfied with my street photography work in Korea lately.",
+      "I still remember Nakano last August, when the heat was enough to turn black clothes white with salt. The summer event at Shikinomori Park, which seemed to shine through the midsummer heat, was no longer there, but I was curious to see what spring would look like instead.",
+      "After such a long time away, I found myself traveling more cautiously than usual. Looking back, I don't think I made the most of my time in Nakano.",
+      "The main reason for returning was Kurayami Matsuri in Fuchu, which I had visited around the same time three years ago. during the festival's final two days, I moved around the shrine grounds like a fish in water, capturing moments. I slipped onto the main festival route pretending to be press, and later ran into a familiar face at a yakisoba yatai.",
+      "It was short, but good.",
+
     ],
     featuredImage: "images/japan/japan-22.jpg",
     featuredCaption: "Japan 22"
@@ -59,29 +73,17 @@ thailand: {
     featuredCaption: "Vietnam 18",
     koreanDescriptionLines: [
       "장모님의 환갑 여행으로 처가댁과 함께 푸꾸옥에 다녀왔다.",
-      "",
-      "아시아, 유럽 등 얕지만 다양한 문화적 관광지가 들어서 있었다. 하지만 섬의 지질학적 뿌리는 베트남에 두고 있어 여러 나라가 합심하여 베트남에게 위탁한 것 같은 ",
-      "섬의 뉘앙스가 강하게 풍겨왔다. 섬은 아직 많은 곳이 개발중이었고 그러다보니 떠오른 단어는 ‘미완성 된 파라다이스’",
-      "",
-      "따듯했지만 활기찼지만 모두가 익숙한 이방인으로써 서로에 대한 미묘한 어색함이 맴돌던 곳이었다. 한국인이 많았기 때문이려나?",
-      "일주일간의 방문으로 모든 것을 다 알긴 어렵겠지만 가족들은 “푸꾸옥 갈바엔 00가겠다” 라는 문장을 시작으로 다시 방문 할 일은 없을 거라고 코멘트를 남겼었다.",
-      "",
+      "아시아, 유럽 등 얕지만 다양한 문화적 관광지가 들어서 있었다. 하지만 섬의 지질학적 뿌리는 베트남에 두고 있어 여러 나라가 합심하여 베트남에게 위탁한 것 같은 섬의 뉘앙스가 강하게 풍겨왔다. 섬은 아직 많은 곳이 개발중이었고 그러다보니 떠오른 단어는 ‘미완성 된 파라다이스’",
+      "따듯했지만 활기찼지만 모두가 익숙한 이방인으로써 서로에 대한 미묘한 어색함이 맴돌던 곳이었다. 한국인이 많았기 때문이려나? 일주일간의 방문으로 모든 것을 다 알긴 어렵겠지만 가족들은 “푸꾸옥 갈바엔 00가겠다” 라는 문장을 시작으로 다시 방문 할 일은 없을 거라고 코멘트를 남겼었다.",
       "나는 이상하게 이곳에서의 삶에 대한 궁금증이 생겼던 여행이었다. 개발중인 도시에서의 삶은 어떨까?"
     ],
     englishDescriptionLines: [
       "I visited Phu Quoc with my wife's family on a trip celebrating my mother-in-law's 60th birthday.",
-      "",
-      "The island was filled with tourist attractions inspired by a mix of Asian and European cultures. Although geographically part of Vietnam",
-      "it often felt as if several countries had come together to create a destination and then handed it back to Vietnam.That impression lingered",
-      "throughout the trip. Much of the island was still under development, and the phrase that kept coming to mind was “An Incomplete Paradise.",
-      "",
-      "It was warm and full of energy, yet there was also a subtle sense of awkwardness in the air, as if everyone was a familiar stranger. Maybe that",
-      "was because there were so many Koreans around. A week is hardly enough time to fully understand a place, but most of my family came away",
-      "saying some version of, “If I had to choose, I'd rather travel somewhere else.” None of them seemed interested in coming back.",
-      "",
+      "The island was filled with tourist attractions inspired by a mix of Asian and European cultures. Although geographically part of Vietnam it often felt as if several countries had come together to create a destination and then handed it back to Vietnam.That impression lingered throughout the trip. Much of the island was still under development, and the phrase that kept coming to mind was “An Incomplete Paradise.",
+      "It was warm and full of energy, yet there was also a subtle sense of awkwardness in the air, as if everyone was a familiar stranger. Maybe that was because there were so many Koreans around. A week is hardly enough time to fully understand a place, but most of my family came away saying some version of, “If I had to choose, I'd rather travel somewhere else.” None of them seemed interested in coming back.",
       "For some reason, I was left with a different feeling. I found myself wondering what life might be like here.",
       "What does it mean to live in a city that is still being built?"
-    ]
+    ],
   },
   france: {
     title: "Honeymoon in France",
@@ -91,25 +93,17 @@ thailand: {
     featuredCaption: "France 37",
    koreanDescriptionLines: [
   "25년 8월 30일. 결혼을 했다.",
-  "",
   "나와 나라는 파리로 신혼여행을 떠났다. 이 사진들은 파리에서 보고 느낀 것들을 담아온 것이다.",
-  "",
   "컬러필름으로 담은 사진들은 우리 둘의 영혼의 안식처로 자리잡은 파리의 소도시 ‘안시’와 ‘샤모니’에서의 기록물이다.",
   "우린 종종 추억에 잠기며 아름다웠던 그곳을 예찬하곤 한다.",
-  "",
   "흑백필름으로 담은 사진들은 파리 시내에서의 기록물이다.",
   "파리는 때로는 더럽고 냄새도 났지만, 낭만있었고 우아했고 사랑스러운 곳이었다."
 ],
 englishDescriptionLines: [
   "August 30, 2025. We got married.",
-  "",
   "For our honeymoon, my wife and I traveled to Paris. These photographs are fragments of what I saw and felt during that journey.",
-  "",
-  "The color photographs were made in Annecy and Chamonix, two towns that have become a refuge for our souls.",
-  "We often find ourselves reminiscing about our time there, speaking of those beautiful places with admiration and affection.",
-  "",
-  "The black-and-white photographs were made in Paris itself.",
-  "At times, the city was dirty and carried unpleasant smells, yet it remained romantic, elegant, and lovely."
+  "The color photographs were made in Annecy and Chamonix, two towns that have become a refuge for our souls. We often find ourselves reminiscing about our time there, speaking of those beautiful places with admiration and affection.",
+  "The black-and-white photographs were made in Paris itself. At times, the city was dirty and carried unpleasant smells, yet it remained romantic, elegant, and lovely."
 ]
   }
 
