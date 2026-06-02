@@ -804,8 +804,6 @@ body.home-page main {
   body:not(.home-page) main {
     margin-top: 32px !important;
     background: rgba(0,0,0,0.42) !important;
-    backdrop-filter: blur(14px) !important;
-    -webkit-backdrop-filter: blur(3px) !important;
     border-radius: 16px !important;
   }
 
