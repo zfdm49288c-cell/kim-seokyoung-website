@@ -807,6 +807,7 @@ body.home-page main {
     backdrop-filter: blur(14px) !important;
     -webkit-backdrop-filter: blur(3px) !important;
     border-radius: 16px !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 
   .fragment-page .gallery-korean-title,
@@ -919,16 +920,5 @@ body.home-page main {
   }
 
   .lightbox.is-open {
-  }
-}
-@media (max-width: 600px) {
-  main {
-    pointer-events: none !important;
-  }
-
-  main a,
-  main button,
-  main .japan-thumb {
-    pointer-events: auto !important;
   }
 }
