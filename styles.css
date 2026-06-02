@@ -902,30 +902,6 @@ body.home-page main {
 
 @media (max-width: 600px) {
   html,
-  body {
-    height: auto !important;
-    min-height: 100% !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    position: relative !important;
-    touch-action: pan-y !important;
-  }
-
-  main {
-    height: auto !important;
-    overflow: visible !important;
-    touch-action: pan-y !important;
-  }
-
-  html.lightbox-locked,
-  body.lightbox-locked {
-    overflow: hidden !important;
-    height: 100% !important;
-    touch-action: none !important;
-  }
-}
-@media (max-width: 600px) {
-  html,
   body,
   html.lightbox-locked,
   body.lightbox-locked {
@@ -935,16 +911,13 @@ body.home-page main {
     min-height: 100% !important;
     position: relative !important;
     top: auto !important;
-    touch-action: pan-y !important;
   }
 
   main {
     overflow: visible !important;
     height: auto !important;
-    touch-action: pan-y !important;
   }
 
   .lightbox.is-open {
-    touch-action: none !important;
   }
 }
