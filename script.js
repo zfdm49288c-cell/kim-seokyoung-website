@@ -115,7 +115,62 @@ englishDescriptionLines: [
   "The black-and-white photographs were made in Paris itself. At times, the city was dirty and carried unpleasant smells, yet it remained romantic, elegant, and lovely."
 ]
   }
+,
 
+object: {
+  title: "Object",
+  englishTitle: "Object",
+  koreanTitle: "오브젝트",
+  featuredImage: "images/object/object-01.jpg",
+  featuredCaption: "Object 01",
+  koreanDescriptionLines: [],
+  englishDescriptionLines: []
+},
+
+artis: {
+  title: "Art is",
+  englishTitle: "Art is",
+  koreanTitle: "예술은",
+  isPublic: false,
+  featuredImage: "images/projects/artis/artis-01.jpg",
+  featuredCaption: "Art is 01",
+  koreanDescriptionLines: [
+    "한글 본문"
+  ],
+  englishDescriptionLines: [
+    "English description"
+  ]
+},
+
+bogwangdong: {
+  title: "bogwang-dong",
+  englishTitle: "bogwang-dong",
+  koreanTitle: "보광동",
+  isPublic: false,
+  featuredImage: "images/projects/bogwangdong/bogwangdong-01.jpg",
+  featuredCaption: "bogwang-dong 01",
+  koreanDescriptionLines: [
+    "한글 본문"
+  ],
+  englishDescriptionLines: [
+    "English description"
+  ]
+},
+
+modumoa: {
+  title: "Modumoa",
+  englishTitle: "Modumoa",
+  koreanTitle: "모두모아",
+  isPublic: false,
+  featuredImage: "images/projects/modumoa/modumoa-01.jpg",
+  featuredCaption: "Modumoa 01",
+  koreanDescriptionLines: [
+    "한글 본문"
+  ],
+  englishDescriptionLines: [
+    "English description"
+  ]
+}
   
 };
 const projectPages = {
@@ -191,7 +246,8 @@ function renderGallery(key) {
 
   activeItems = galleryItems;
   const isVietnam = key === "vietnam";
-const hasKoreanText = Array.isArray(config.koreanDescriptionLines) && config.koreanDescriptionLines.length > 0;
+const hasKoreanTitle = Boolean(config.koreanTitle);
+const hasKoreanText = hasKoreanTitle;
   const pageClasses = `gallery-page fragment-page${isVietnam ? " vietnam-page" : ""}${hasKoreanText ? " has-korean" : ""}`;
 
   const renderTextLines = (lines) => lines.map((line) => {
@@ -203,7 +259,7 @@ const hasKoreanText = Array.isArray(config.koreanDescriptionLines) && config.kor
       ${hasKoreanText ? `
       <h2 class="gallery-korean-title">${config.koreanTitle || ""}</h2>
       <div class="gallery-intro gallery-korean-intro">
-        ${renderTextLines(config.koreanDescriptionLines)}
+        ${renderTextLines(config.koreanDescriptionLines || [])}
       </div>
       <div class="gallery-language-gap"></div>
       ` : ""}
@@ -356,7 +412,6 @@ function renderDefault(key) {
   const titles = {
     fragment: "FRAGMENT",
     anbu: "안부 (安否)",
-    nara: "Nara",
   };
 
   const title = titles[key] || "";

@@ -105,6 +105,32 @@ return {
   objectPosition: position
 };
 });
+/* Project - Object */
+window.galleryData.object = Array.from({ length: 30 }, (_, i) => {
+  const num = String(i + 1).padStart(2, "0");
+
+      if (num === "01") {
+  position = "50% 85%";
+}
+        if (num === "04") {
+  position = "50% 20%";
+}
+        if (num === "15") {
+  position = "50% 30%";
+}
+        if (num === "17") {
+  position = "50% 90%";
+}
+        if (num === "18") {
+  position = "50% 50%";
+}
+  return {
+    src: `images/object/object-${num}.jpg`,
+    thumbSrc: `images/object/thumbs/object-${num}.jpg`,
+    caption: `Object ${num}`,
+    objectPosition: position
+  };
+});
 
 /* Empty placeholders for future projects */
 window.galleryData.korea = [];
